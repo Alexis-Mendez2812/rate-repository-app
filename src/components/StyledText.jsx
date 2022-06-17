@@ -1,34 +1,52 @@
-import React from 'react'
-import { StyleSheet,Text} from 'react-native'
+import React from "react";
+import { StyleSheet, Text } from "react-native";
+import theme from "../theme.js";
 
 const styles = StyleSheet.create({
-text:{fontSize:12,
-color: 'grey'},
-bold:{
-    fontWeight:'bold'
-},
-blue:{
-    color:'blue'
-},
-big:{ 
-    fontSize:20
-},
-small:{ 
-    fontSize:10
-}
-})
+	text: {
+		color: theme.colors.textPrimary,
+		fontSize: theme.fontSizes.body,
+		fontFamily: theme.fonts.main,
+		fontWeight: theme.fontWeights.normal,
+	},
+	colorPrimary: {
+		color: theme.colors.primary,
+	},
+	colorSecondary: {
+		color: theme.colors.textSecondary,
+	},
+	bold: {
+		fontWeight: theme.fontWeights.bold,
+	},
+	subheading: {
+		fontSize: theme.fontSizes.subheading,
+	},
+	textAlignCenter: {
+		textAlign: 'center',
+	},
+});
 
-export default  function StyledText({blue,bold,children,big,small}){
-    const textStyles=[
-        styles.text,
-        blue && styles.blue,
-        bold && styles.bold,
-        big  && styles.big,
-        small&& styles.small,
-    ]
-    return (
-        <Text style={textStyles}>
-            {children}
-        </Text>
-    )
+export default function StyledText({
+	children,
+	color,
+	fontSize,
+	fontWeight,
+	style,
+    align,
+	...restOfProps
+}) {
+	const textStyles = [
+		styles.text,
+        align ==='center' && styles.textAlignCenter,
+		color === "primary" && styles.colorPrimary,
+		color === "secondary" && styles.colorSecondary,
+		fontSize === "subheading" && styles.subheading,
+		fontWeight === "bold" && styles.bold,
+        style
+	];
+	return (
+		<Text style={textStyles} {...restOfProps}>
+			{children}
+		</Text>
+	);
 }
