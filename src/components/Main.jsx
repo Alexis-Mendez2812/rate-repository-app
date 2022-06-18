@@ -1,14 +1,15 @@
-import { View, Text } from 'react-native'
-import React from 'react'
-import RepositoryList from './RepositoryList'
-import AppBar from './AppBar'
-const Main =() => {
-  return (
-    <View style={{flex:1}}>
-<AppBar/>
-      <RepositoryList/>
-    </View>
-  )
-}
+import React from "react";
+import { View, Text } from "react-native";
+import RepositoryList from "./RepositoryList";
+import AppBar from "./AppBar";
+import {  Route, Switch } from "react-router-native";
+const Main = () => {
+	return (
+		<View style={{ flex: 1 }}>
+	
+<Text>Hi</Text>
+		</View>
+	);
+};
 
-export default Main
+export default Main;

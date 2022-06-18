@@ -13,9 +13,7 @@ const RepositoryList =() => {
     renderItem={({item:repo})=>(
 <RepositoryItem {...repo}/>
     )}
-    >
-
-    </FlatList>
+    />
   )
 }
 
