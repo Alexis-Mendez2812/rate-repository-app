@@ -1,17 +1,17 @@
 // import React from "react";
-import Main from "./src/components/Main.jsx";
 // import { NativeRouter } from "react-router-native";
 
 // export default function App() {
-// 	return <NativeRouter><Main/></NativeRouter>
-
-// }
-
-import * as React from "react";
-import { Button, View } from "react-native";
-import { createDrawerNavigator } from "@react-navigation/drawer";
-import { NavigationContainer } from "@react-navigation/native";
-
+	// 	return <NativeRouter><Main/></NativeRouter>
+	
+	// }
+	
+	import * as React from "react";
+	import { Button, View } from "react-native";
+	import { createDrawerNavigator } from "@react-navigation/drawer";
+	import { NavigationContainer } from "@react-navigation/native";
+	import Main from "./src/components/Main.jsx";
+	
 function HomeScreen({ navigation }) {
 	return (
 		<View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
@@ -33,7 +33,7 @@ function NotificationsScreen({ navigation }) {
 
 const Drawer = createDrawerNavigator();
 
-export default function App() {
+const App=()=> {
 	return (
 		<NavigationContainer>
 			<Drawer.Navigator initialRouteName="Home">
@@ -44,3 +44,5 @@ export default function App() {
 		</NavigationContainer>
 	);
 }
+
+export default  App
